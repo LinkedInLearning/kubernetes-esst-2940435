@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: linkedin-sidecar
+spec:
+  containers:
+  - name: linkedin-container
+    image: busybox:latest
+    command: ['sh', '-c', 'while true; do echo $(date) >> /data/time.txt; sleep 5; done']
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  - image: busybox:latest
+    name: sidecar
+    command: ['sh', '-c', 'tail -f /data/time.txt']
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  volumes:
+  - name: data
+    emptyDir: {}

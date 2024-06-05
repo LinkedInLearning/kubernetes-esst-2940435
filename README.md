@@ -13,15 +13,16 @@ Dieses Repository hat Branches für jedes Video im Kurs. Verwenden Sie das Auskl
 ## Installation
 
 1. Um diese Übungsdateien nutzen zu können, müssen Sie folgendes installiert haben:
-   - [list of requirements for course]
+   - kubectl
+   - Ein Kubernetes-Cluster (z.B. Minikube, K3S, oder Docker Desktop)
+   - Ein Texteditor oder eine IDE
 2. Klonen Sie das Repository in Ihre lokale Maschine unter Verwendung von terminal (Mac), CMD (Windows) oder ein anderes Werkzeug mit grafischer Bedienoberfläche wie SourceTree.
-3. [Course-specific instructions]
 
 ### Autor
 
-**[Name hier eintragen]**
+**Karsten Samaschke**
 
-_[Berufsbezeichnung hier eintragen]_
+Principal Cloud & AI Architect, Trainer, Consultant
 
 Sehen Sie sich andere Kurse des Autors auf [LinkedIn Learning](https://www.linkedin.com/learning/instructors/name_des_autors) an.
 
