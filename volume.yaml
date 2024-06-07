@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linkedin-volume-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: linkedin-volume
+  template:
+    metadata:
+      labels:
+        app: linkedin-volume
+    spec:
+      containers:
+      - name: webserver
+        image: nginx:alpine
+        volumeMounts:
+        - name: shared-data
+          mountPath: /usr/share/nginx/html
+      - name: data-writer
+        image: busybox:latest
+        command: ["sh", "-c", "echo 'Hello from the shared volume!' > /data/index.html && sleep infinity"]
+        volumeMounts:
+        - name: shared-data
+          mountPath: /data
+      volumes:
+      - name: shared-data
+        emptyDir: {}
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: linkedin-volume-demo
+spec:
+  selector:
+    app: linkedin-volume
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
