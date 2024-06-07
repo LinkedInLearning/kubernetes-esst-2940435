@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linkedin-persistenz-demo
+spec:
+  replicas: 2  
+  selector:
+    matchLabels:
+      app: linkedin-persistenz
+  template:
+    metadata:
+      labels:
+        app: linkedin-persistenz
+    spec:
+      containers:
+        - name: app
+          image: busybox:latest
+          command: ["sh", "-c", "eval echo 'Hello from $(hostname)!' > /data/$(hostname).txt && sleep infinity"]
+          volumeMounts:
+            - name: linkedin-data-volume
+              mountPath: /data
+      volumes:
+        - name: linkedin-data-volume
+          persistentVolumeClaim:
+            claimName: linkedin-data-pvc

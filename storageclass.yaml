@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: linkedin-storageclass
+provisioner: rancher.io/local-path  
+volumeBindingMode: WaitForFirstConsumer # Immediate
+allowVolumeExpansion: false # true
+reclaimPolicy: Delete # Retain
