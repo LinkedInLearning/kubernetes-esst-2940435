@@ -29,4 +29,4 @@ Sehen Sie sich andere Kurse des Autors auf [LinkedIn Learning](https://www.linke
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]: https://www.linkedin.com/learning/kubernetes-grundkurs
-[lil-thumbnail-url]: https:
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG2mz8Fc1CXNQ/learning-public-crop_675_1200/learning-public-crop_675_1200/0/1728391985456?e=2147483647&v=beta&t=YAfjBCOQWWVqQyGD-19bXf9AGJ3juCEn3zpqanmtnq0
